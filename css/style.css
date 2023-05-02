@@ -78,6 +78,8 @@ nav {
   height: 100%;
 }
 .first-col .image-container img {
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
 }
 .first-col .second-half {

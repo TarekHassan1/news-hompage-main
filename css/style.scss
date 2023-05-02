@@ -80,6 +80,8 @@ nav {
     height: 100%;
 
     .image-container img {
+        background-repeat: no-repeat;
+        background-size: cover;
         width: 100%;
     }
 
