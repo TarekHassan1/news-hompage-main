@@ -16,6 +16,10 @@ header {
   justify-content: center;
 }
 
+.links.lowScreen {
+  display: none;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
