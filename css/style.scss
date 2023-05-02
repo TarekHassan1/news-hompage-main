@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+}
+
+.burger-menu {
+    display: none;
+}
+
+.logo span {
+    font-size: 4rem;
+    font-weight: 800;
+    font-family: initial;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        background-color: black;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        bottom: 15px;
+        right: -5px;
+    }
+}
+
+.links {
+    display: flex;
+    list-style-type: none;
+
+    li a {
+        margin-right: 20px;
+        text-decoration: none;
+        color: hsl(250deg 2.94% 60%);
+        &:hover{
+            color: hsl(5, 85%, 63%);
+        }
+    }
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+
+    .container {
+        display: grid;
+        grid-template-columns: 2.1fr 1fr;
+        gap: 2rem;
+        width: 80%;
+        place-items: center;
+    }
+}
+
+.first-col {
+    height: 100%;
+
+    .image-container img {
+        width: 100%;
+    }
+
+    .second-half {
+        display: grid;
+        padding-top: 2rem;
+        gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+
+        button {
+            color: hsl(36, 100%, 99%);
+            background-color: hsl(5, 85%, 63%);
+            border: 0px;
+            padding: 1.2rem;
+            letter-spacing: 0.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 55%;
+            transition: 0.5s;
+            &:hover{
+                background-color: black;
+            }
+        }
+    }
+}
+
+.second-half {
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    p {
+        color: hsl(240deg 2.44% 30.92%);
+    }
+}
+
+.first-col .second-half h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.home .second-col {
+    background-color: hsl(240deg 100% 5.1%);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.9rem;
+}
+
+.second-col {
+    div {
+        line-height: 2;
+    }
+
+    span {
+        color: hsl(35, 77%, 62%);
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+
+    h3 {
+        color: white;
+        &:hover{
+            color: hsl(35, 77%, 62%);
+            cursor: pointer;
+        }
+    }
+
+    p {
+        color: hsl(237.27deg 11.58% 62.75%);
+    }
+}
+
+footer {
+    padding-top: 3rem;
+
+    .container {
+        width: 80%;
+        margin-inline: auto;
+        display: flex;
+
+        >div {
+            display: flex;
+            padding: 10px;
+            align-items: end;
+            position: relative;
+            counter-increment: count;
+
+            &::before {
+                content: "0" counter(count);
+                position: absolute;
+                left: 130px;
+                top: 15px;
+                color: hsl(247.5deg 7.69% 79.61%);
+                font-weight: 600;
+                font-size: 2rem;
+            }
+
+            img {
+                width: 100px;
+            }
+
+            h4 {
+                font-size: 1.2rem;
+                font-weight: 800;
+                line-height: 2;
+                &:hover{
+                    color: hsl(5, 85%, 63%);
+                    cursor: pointer;
+                }
+            }
+
+            >div {
+                padding-left: 1rem;
+                line-height: 1.5;
+            }
+
+            p {
+                color: hsl(237.27deg 11.58% 62.75%);
+            }
+        }
+    }
+}
+
+.burger-menu {
+    cursor: pointer;
+
+    span {
+        display: block;
+        background-color: black;
+        width: 50px;
+        height: 5px;
+        margin-bottom: 0.4rem;
+    }
+}
+
+@media (max-width: 375px) {
+    body{
+        padding-top: 0;
+    }
+    .links {
+        display: none;
+    }
+
+    footer .container {
+        width: 90%;
+        flex-direction: column;
+
+        >div {
+            min-width: 105%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            padding-right: 0;
+            padding-left: 0;
+
+            h4 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            &::before {
+                top: 0px;
+            }
+        }
+    }
+
+    .home {
+        flex-direction: column;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin-inline: auto;
+            justify-content: center;
+            width: 90%;
+
+            .second-half {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    }
+
+    .second-half div {
+        gap: 2rem;
+    }
+
+    .first-col .second-half button {
+        width: 70%;
+    }
+
+    .burger-menu {
+        display: block;
+        z-index: 99999;
+        transition: 1s;
+    }
+    .burger-menu span{
+        transition: 0.3s;
+        margin-bottom: 0.3rem;
+    }
+
+    .size {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        position: absolute;
+        justify-content: center;
+        right: 0;
+        background-color: white;
+        padding: 30px;
+        width: 70%;
+        z-index: 10;
+         li {
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-size: 1.5rem;
+            a{color: black;}
+         }
+    }
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.transform-1 {
+    width: 35px;
+    transform: translateY(9px) rotate(45deg);
+    -webkit-transform: translateY(9px) rotate(45deg);
+    -moz-transform: translateY(9px) rotate(45deg);
+    -ms-transform: translateY(9px) rotate(45deg);
+    -o-transform: translateY(9px) rotate(45deg);
+}
+
+.transform-2 {
+    width: 35px;
+    transform: translateY(-10px) rotate(-45deg);
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+    -moz-transform: translateY(-10px) rotate(-45deg);
+    -ms-transform: translateY(-10px) rotate(-45deg);
+    -o-transform: translateY(-10px) rotate(-45deg);
+}
+.overlay-show{
+    display: block;
+}
